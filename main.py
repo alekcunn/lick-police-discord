@@ -21,7 +21,7 @@ class MyClient(discord.Client):
             td = abs(self.time_since - datetime.now())
             since = (td.seconds//60)%60
             await message.channel.send("We lasted {} minutes without licking someone. Way to go {}!".format(since, auth))
-            time_since = datetime.now()
+            self.time_since = datetime.now()
 
 print(datetime.now())
 client = MyClient()
